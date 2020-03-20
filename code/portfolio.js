@@ -3,7 +3,9 @@ function onClick(element) {
     document.getElementById("img01").src = element.src;
     document.getElementById("modal01").style.display = "block";
     var captionText = document.getElementById("caption");
-    captionText.innerHTML = element.alt;
+    var path = element.getAttribute("data-direction");
+    var template = ""
+    captionText.innerHTML = element.alt + "<br/><br/>See full document at <a href="+ path+ " target=&quot;_blank&quot;>HERE</a>";
 }
 
 // Change style of navbar on scroll
